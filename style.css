@@ -8,14 +8,16 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(180deg, #f0fbfa 0%, #f7f7f7 100%);
+  color: #07323a;
 }
 
 /* Header */
 header {
   background: white;
-  border-bottom: 2px solid #0d9488;
+  border-bottom: 2px solid rgba(13,148,136,0.12);
+  padding: 0.75rem 0;
 }
 .brand-mark, .header-button {
   min-width: 220px;
@@ -66,10 +68,10 @@ header {
   width: 92px;
   height: 92px;
   object-fit: contain;
-  border-radius: 18px;
-  background: #f8fafc;
+  border-radius: 14px;
+  background: #ffffff;
   padding: 0.35rem;
-  box-shadow: 0 8px 20px rgba(13, 148, 136, 0.12);
+  box-shadow: 0 8px 24px rgba(6, 95, 70, 0.08);
 }
 
 #page-home .brand-title h1 {
@@ -100,11 +102,11 @@ header {
 .header-feature-image {
   display: block;
   width: 100%;
-  max-width: 520px;
+  max-width: 720px;
   height: auto;
   margin: 0 auto;
-  border-radius: 18px;
-  box-shadow: 0 16px 35px rgba(13, 148, 136, 0.14);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(6, 95, 70, 0.08);
   object-fit: cover;
 }
 
@@ -169,6 +171,7 @@ main {
 .btn-primary {
   background: #0d9488;
   color: white;
+  box-shadow: 0 6px 18px rgba(13,148,136,0.08);
 }
 
 .btn-primary:hover {

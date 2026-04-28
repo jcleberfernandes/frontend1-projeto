@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin - Adicionar Medicamento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="page-admin">
+    <header>
+      <div class="header-box">
+        <div class="brand-mark">
+          <img src="img/Farmacialogo.png" alt="FarmaciaFernandes" class="brand-logo">
+        </div>
+        <div class="brand-title">
+          <h1>Gerencia - Farmácia Fernandes</h1>
+          <p class="small">Adicionar ou gerir medicamentos</p>
+        </div>
+        <div class="header-button">
+          <a href="index.html" class="btn btn-outline">Voltar</a>
+          <button type="button" onclick="logout()" class="btn btn-danger" style="margin-left:0.5rem">Sair</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="form-page">
+        <h2>Adicionar Medicamento</h2>
+        <form id="admin-form" aria-label="Formulário adicionar medicamento">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input id="nome" required placeholder="Ex: Paracetamol">
+          </div>
+
+          <div class="form-group">
+            <label for="principio">Princípio ativo</label>
+            <input id="principio" required placeholder="Ex: Paracetamol 500mg">
+          </div>
+
+          <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <input id="categoria" placeholder="Ex: Analgésico">
+          </div>
+
+          <div class="form-group">
+            <label for="stock">Stock</label>
+            <input id="stock" type="number" min="0" value="0">
+          </div>
+
+          <div class="form-group">
+            <label for="preco">Preço (€)</label>
+            <input id="preco" type="number" step="0.01" min="0" placeholder="0.00">
+          </div>
+
+          <div class="form-group">
+            <label for="validade">Data de validade</label>
+            <input id="validade" type="date">
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+          </div>
+        </form>
+
+        <div id="admin-msg" class="small muted" style="margin-top:0.75rem"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

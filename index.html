@@ -1,122 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FarmaciaFernandes - Gestão de medicamentos">
-  <meta name="theme-color" content="#0d9488">
-  <title>FarmaciaFernandes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Farmácia - Lista de Medicamentos</title>
   <link rel="stylesheet" href="style.css">
-  
-  <!-- BIBLIOTECA EXTERNA: Para adicionar, incluir aqui -->
-  <!-- Exemplo: <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-</head>
+  </head>
 <body>
-  <!-- PÁGINA: LISTA -->
   <div id="page-home">
     <header>
       <div class="header-box">
-        <div class="brand-mark" aria-label="FarmaciaFernandes">
+        <div class="brand-mark">
           <img src="img/Farmacialogo.png" alt="FarmaciaFernandes" class="brand-logo">
         </div>
         <div class="brand-title">
-          <h1>Farmacia Fernandes</h1>
+          <h1>Farmácia Fernandes</h1>
           <p>Saúde • Cuidado • Bem-estar</p>
         </div>
         <div class="header-button">
-          <button class="btn btn-primary " onclick="showPage('new')">+ Novo Medicamento</button>
+          <a class="btn btn-primary" href="admin.html">Login</a>
         </div>
-        
       </div>
-      <div class="header-feature" aria-label="Imagem destaque da FarmaciaFernandes">
-        <img src="img/FarmaciaFernandes.png" alt="FarmaciaFernandes em destaque" class="header-feature-image">
+
+      <div class="header-feature">
+        <img src="img/FarmaciaFernandes.png" alt="Destaque" class="header-feature-image">
       </div>
     </header>
+
     <main>
       <div class="search-box">
-        <input type="text" id="search-input" placeholder="Pesquisar..." oninput="filterMedicamentos()">
-        <select id="categoria-select" onchange="filterMedicamentos()">
-          <option value="">Todas as categorias</option>
-        </select>
+        <input id="search-input" placeholder="Pesquisar por nome...">
+        <button id="btn-refresh" class="btn btn-outline">Atualizar</button>
       </div>
-      <div id="lista-medicamentos"></div>
+
+      <section id="lista-medicamentos">
+        <!-- Lista será inserida aqui pelo script.js -->
+      </section>
     </main>
   </div>
 
-  <!-- PÁGINA: FORMULÁRIO -->
-  <div id="page-form" class="hidden">
-    <header>
-      <div class="header-box">
-        <button class="btn btn-outline" onclick="showPage('home')">← Voltar</button>
-      </div>
-    </header>
-    <main>
-      <div class="form-page">
-        <h2 id="form-title">Novo Medicamento</h2>
-        <form id="medicamento-form" onsubmit="salvarMedicamento(event)">
-          <div class="form-group">
-            <label>Nome</label>
-            <input type="text" id="nome" required minlength="3" maxlength="100">
-            <div class="error" id="error-nome"></div>
-          </div>
-          <div class="form-group">
-            <label>Princípio Ativo</label>
-            <input type="text" id="principioAtivo" required minlength="3">
-            <div class="error" id="error-principioAtivo"></div>
-          </div>
-          <div class="form-group">
-            <label>Categoria</label>
-            <select id="categoria" required></select>
-            <div class="error" id="error-categoria"></div>
-          </div>
-          <div class="form-group">
-            <label>Stock</label>
-            <input type="number" id="stock" min="0" required>
-            <div class="error" id="error-stock"></div>
-          </div>
-          <div class="form-group">
-            <label>Preço (€)</label>
-            <input type="number" id="preco" step="0.01" min="0.01" required>
-            <div class="error" id="error-preco"></div>
-          </div>
-          <div class="form-group">
-            <label>Data de Validade</label>
-            <input type="date" id="dataValidade" required>
-            <div class="error" id="error-dataValidade"></div>
-          </div>
-          <div class="form-group">
-            <label>Estado</label>
-            <select id="estado" required>
-              <option value="disponivel">Disponível</option>
-              <option value="esgotado">Esgotado</option>
-              <option value="descontinuado">Descontinuado</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <button type="button" class="btn btn-outline" onclick="capturarLocalizacao()" id="btn-gps">📍 Captar Localização</button>
-            <div class="error" id="error-gps"></div>
-          </div>
-          <div id="location-display" class="hidden location-box"></div>
-          <div class="form-actions">
-            <button type="button" class="btn btn-outline" onclick="showPage('home')">Cancelar</button>
-            <button type="submit" class="btn btn-primary" id="btn-salvar">Criar</button>
-          </div>
-        </form>
-      </div>
-    </main>
-  </div>
-
-  
-  <div id="modal-delete" class="modal hidden">
-    <div class="modal-box">
-      <h3>Confirmar Eliminação</h3>
-      <p>Eliminar <strong id="delete-nome"></strong>?</p>
-      <div class="modal-actions">
-        <button class="btn btn-outline" onclick="closeModal()">Cancelar</button>
-        <button class="btn btn-danger" onclick="confirmarDelete()">Eliminar</button>
-      </div>
-    </div>
-  </div>
+  <footer>
+    <p>Farmacia Fernandes</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

@@ -3,67 +3,120 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Painel de administração - Adicionar, editar e gerir medicamentos da Farmácia Fernandes.">
   <title>Admin - Adicionar Medicamento</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="admin-body">
   <div id="page-admin">
-    <header>
-      <div class="header-box">
-        <div class="brand-mark">
-          <img src="img/Farmacialogo.png" alt="FarmaciaFernandes" class="brand-logo">
+    <header class="admin-header">
+      <div class="admin-header-content">
+        <div class="admin-brand">
+          <img src="img/Farmacialogo.png" alt="Farmácia Fernandes" class="admin-logo">
+          <div class="admin-brand-text">
+            <h1>Painel de Gerência</h1>
+            <p>Farmácia Fernandes</p>
+          </div>
         </div>
-        <div class="brand-title">
-          <h1>Gerencia - Farmácia Fernandes</h1>
-          <p class="small">Adicionar ou gerir medicamentos</p>
-        </div>
-        <div class="header-button">
-          <a href="index.html" class="btn btn-outline">Voltar</a>
-          <button type="button" onclick="logout()" class="btn btn-danger" style="margin-left:0.5rem">Sair</button>
+        <div class="admin-nav">
+          <div class="admin-info">
+            <span id="data-admin"></span>
+            <span id="localizacao-admin"></span>
+          </div>
+          <div class="admin-actions">
+            <a href="index.html" class="btn btn-outline-light btn-sm">Voltar</a>
+            <button type="button" onclick="logout()" class="btn btn-danger btn-sm">Sair</button>
+          </div>
         </div>
       </div>
     </header>
 
-    <main>
-      <div class="form-page">
-        <h2>Adicionar Medicamento</h2>
-        <form id="admin-form" aria-label="Formulário adicionar medicamento">
-          <div class="form-group">
-            <label for="nome">Nome</label>
-            <input id="nome" required placeholder="Ex: Paracetamol">
+    <main class="admin-main">
+      <div class="admin-container">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2>Adicionar Medicamento</h2>
+            <p>Preencha os campos abaixo para adicionar um novo medicamento ao catálogo</p>
           </div>
 
-          <div class="form-group">
-            <label for="principio">Princípio ativo</label>
-            <input id="principio" required placeholder="Ex: Paracetamol 500mg">
-          </div>
+          <form id="admin-form" aria-label="Formulário adicionar medicamento" class="admin-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome do Medicamento</label>
+                <input 
+                  id="nome" 
+                  class="form-control form-control-lg"
+                  required 
+                  placeholder="Ex: Paracetamol 500mg"
+                  autocomplete="off">
+              </div>
 
-          <div class="form-group">
-            <label for="categoria">Categoria</label>
-            <input id="categoria" placeholder="Ex: Analgésico">
-          </div>
+              <div class="form-group">
+                <label for="principio">Princípio Ativo</label>
+                <input 
+                  id="principio" 
+                  class="form-control form-control-lg"
+                  required 
+                  placeholder="Ex: Acetaminofeno"
+                  autocomplete="off">
+              </div>
+            </div>
 
-          <div class="form-group">
-            <label for="stock">Stock</label>
-            <input id="stock" type="number" min="0" value="0">
-          </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <input 
+                  id="categoria" 
+                  class="form-control form-control-lg"
+                  placeholder="Ex: Analgésico"
+                  autocomplete="off">
+              </div>
 
-          <div class="form-group">
-            <label for="preco">Preço (€)</label>
-            <input id="preco" type="number" step="0.01" min="0" placeholder="0.00">
-          </div>
+              <div class="form-group">
+                <label for="stock">Stock</label>
+                <input 
+                  id="stock" 
+                  class="form-control form-control-lg"
+                  type="number" 
+                  min="0" 
+                  value="0">
+              </div>
+            </div>
 
-          <div class="form-group">
-            <label for="validade">Data de validade</label>
-            <input id="validade" type="date">
-          </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="preco">Preço (€)</label>
+                <input 
+                  id="preco" 
+                  class="form-control form-control-lg"
+                  type="number" 
+                  step="0.01" 
+                  min="0" 
+                  placeholder="0.00">
+              </div>
 
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Adicionar</button>
-          </div>
-        </form>
+              <div class="form-group">
+                <label for="validade">Data de Validade</label>
+                <input 
+                  id="validade" 
+                  class="form-control form-control-lg"
+                  type="date">
+              </div>
+            </div>
 
-        <div id="admin-msg" class="small muted" style="margin-top:0.75rem"></div>
+            <div class="form-actions">
+              <button id="btn-submit" type="submit" class="btn btn-primary btn-lg btn-action">
+                <span>✓</span> Adicionar
+              </button>
+              <button id="btn-cancelar" type="button" class="btn btn-secondary btn-lg btn-action" style="display:none;">
+                <span>✕</span> Cancelar
+              </button>
+            </div>
+          </form>
+
+          <div id="admin-msg" class="admin-message"></div>
+        </div>
       </div>
     </main>
   </div>

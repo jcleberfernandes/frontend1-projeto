@@ -3,26 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Lista completa de medicamentos disponíveis na Farmácia Fernandes. Pesquise e consulte informações sobre medicamentos.">
   <title>Farmácia - Lista de Medicamentos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   </head>
 <body>
   <div id="page-home">
     <header>
       <div class="header-box">
-        <div class="brand-mark">
-          <img src="img/Farmacialogo.png" alt="FarmaciaFernandes" class="brand-logo">
+        <div class="header-brand">
+          <div class="brand-mark">
+            <img src="img/Farmacialogo.png" alt="FarmaciaFernandes" class="brand-logo">
+          </div>
         </div>
-        <div class="brand-title">
-          <h1>Farmácia Fernandes</h1>
-          <p>Saúde • Cuidado • Bem-estar</p>
-        </div>
-        <div class="header-button">
-          <a class="btn btn-primary" href="admin.html">Login</a>
+        <div class="header-button" id="header-button">
+          <!-- Preenchido dinamicamente por script.js -->
         </div>
       </div>
 
       <div class="header-feature">
+        <div class="header-feature-title">
+          <h1>Farmácia Fernandes</h1>
+          <p>Saúde • Cuidado • Bem-estar</p>
+        </div>
         <img src="img/FarmaciaFernandes.png" alt="Destaque" class="header-feature-image">
       </div>
     </header>
@@ -30,7 +34,7 @@
     <main>
       <div class="search-box">
         <input id="search-input" placeholder="Pesquisar por nome...">
-        <button id="btn-refresh" class="btn btn-outline">Atualizar</button>
+        <button id="btn-refresh" class="btn btn-outline">Pesquisar</button>
       </div>
 
       <section id="lista-medicamentos">
@@ -41,6 +45,10 @@
 
   <footer>
     <p>Farmacia Fernandes</p>
+    <div class="footer-meta">
+      <span id="data-atual"></span>
+      <span id="localizacao-atual"></span>
+    </div>
   </footer>
 
   <script src="script.js"></script>

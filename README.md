@@ -33,16 +33,3 @@
 
 1. Abrir `index.html` no browser
 2. Usar a aplicação normalmente
-
----
-
-## Adicionar Biblioteca Externa
-
-No ficheiro `index.html` (linhas 11-12), onde está o comentário:
-
-```html
-<!-- BIBLIOTECA EXTERNA: Para adicionar, incluir aqui -->
-<!-- Exemplo: <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-```
-
-Basta remover os comentários e adicionar o link da biblioteca desejada.

@@ -311,10 +311,8 @@ window.onload = function () {
   updateNavigation();
   mostrarData();
   
-  // Pedir localização DEPOIS do carregamento (assincronamente)
-  setTimeout(function() {
-    pedirLocalizacao();
-  }, 100);
+  // Geolocalização removida do carregamento automático (melhoria Best Practices)
+  // O utilizador pode clicar no botão para ver a sua localização
   
   if (document.getElementById('lista-medicamentos')) {
     document.getElementById('btn-refresh')?.addEventListener('click', mostrarLista);

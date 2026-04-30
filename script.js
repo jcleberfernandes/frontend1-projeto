@@ -130,8 +130,8 @@ function renderMedicamentoCard(m) {
   html += '<div class="actions">';
   if (isAdminLogged()) {
     html += '<button onclick="apagarMedicamento(\'' + m.id + '\')" class="btn btn-danger btn-sm" style="margin-right:0.5rem">Apagar</button>';
+    html += '<button onclick="irEditarMedicamento(\'' + m.id + '\')" class="btn btn-info btn-sm">Editar</button>';
   }
-  html += '<button onclick="irEditarMedicamento(\'' + m.id + '\')" class="btn btn-info btn-sm">Editar</button>';
   html += '</div>';
   html += '</div>';
   html += '</article>';
@@ -388,6 +388,6 @@ function updateNavigation() {
   if (isAdminLogged()) {
     headerBtn.innerHTML = '<button class="btn btn-danger" onclick="logout()">Sair</button>';
   } else {
-    headerBtn.innerHTML = '<a class="btn btn-primary" href="admin.html">Login</a>';
+    headerBtn.innerHTML = '<a class="btn btn-primary" href="login.html">Login</a>';
   }
 }
